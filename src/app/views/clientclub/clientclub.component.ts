@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-clientclub',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientclubComponent implements OnInit {
 
+validator:any
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+ 
 }

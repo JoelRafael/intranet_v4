@@ -1,123 +1,127 @@
 
 
-          <div class="row">
+          <form
+          [formGroup]="formregistreclub" novalidate
+          (ngSubmit)="onSubmit(formregistreclub)"
+          style="margin-bottom: 10px"
+        >
+        <div class="row">
 
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Club</mat-label>
-                <input type="email" matInput
-                       placeholder="24000011111111">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Cedula/Pasaporte</mat-label>
-                <input type="email" matInput
-                       placeholder="Cedula sin guiones">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Codigo</mat-label>
-                <input type="email" matInput
-                       placeholder="V0000445A">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Nombre</mat-label>
-                <input type="email" matInput
-                       placeholder="Juan Alberto">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Apellido</mat-label>
-                <input type="email" matInput
-                       placeholder="Perez Gomez">
-                  </mat-form-field>
-            </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Club</mat-label>
+              <input type="email" matInput 
+                     placeholder="24000011111111">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Cedula/Pasaporte</mat-label>
+              <input type="email" matInput
+                     placeholder="Cedula sin guiones">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Codigo</mat-label>
+              <input type="email" matInput
+                     placeholder="V0000445A">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre</mat-label>
+              <input type="email" matInput
+                     placeholder="Juan Alberto">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Apellido</mat-label>
+              <input type="email" matInput
+                     placeholder="Perez Gomez">
+                </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Telefono</mat-label>
+              <input type="email" matInput
+                     placeholder="809-000-0000">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Celular</mat-label>
+              <input type="email" matInput
+                     placeholder="809-000-0000">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Direccion</mat-label>
+              <input type="email" matInput
+                     placeholder="Ave 27 de febrero">
+                </mat-form-field>
           </div>
 
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Telefono</mat-label>
-                <input type="email" matInput
-                       placeholder="809-000-0000">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Celular</mat-label>
-                <input type="email" matInput
-                       placeholder="809-000-0000">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Direccion</mat-label>
-                <input type="email" matInput
-                       placeholder="Ave 27 de febrero">
-                  </mat-form-field>
-            </div>
-
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Ciudad</mat-label>
+              <input type="email" matInput
+                     placeholder="Santo Domingo">
+                </mat-form-field>
           </div>
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Ciudad</mat-label>
-                <input type="email" matInput
-                       placeholder="Santo Domingo">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>E-mail</mat-label>
-                <input type="email" matInput
-                       placeholder="jperez@hotmail.com">
-                  </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field appearance="fill">
-                <mat-label>Status</mat-label>
-                <mat-select disableRipple>
-                  <mat-option value="1">Activo</mat-option>
-                  <mat-option value="2">Inactivo</mat-option>
+          <div class="col">
+            <mat-form-field class="example-full-width">
+              <mat-label>E-mail</mat-label>
+              <input type="email" matInput
+                     placeholder="jperez@hotmail.com">
+                </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Status</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">Activo</mat-option>
+                <mat-option value="2">Inactivo</mat-option>
 
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field appearance="fill">
-                <mat-label>Tienda</mat-label>
-                <mat-select disableRipple>
-                  <mat-option value="1">PL01 - Plaza Lama Duarte</mat-option>
-                  <mat-option value="2">Option 2</mat-option>
-                  <mat-option value="3">Option 3</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Tienda</mat-label>
+              <mat-select disableRipple>
+                <mat-option value="1">PL01 - Plaza Lama Duarte</mat-option>
+                <mat-option value="2">Option 2</mat-option>
+                <mat-option value="3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
+
+
+        </div>
+        <div class="row">
+          <div class="col-md-3 ml-md-auto">
+
+
+            <div class="btn-group">
+              <button pButton type="submit" label="Guardar" class="p-button-success" ><i class="pi pi-save" ></i>
+              </button>
+              <button pButton type="reset" label="Limpiar" class="p-button-warning"><i class="pi pi-trash" ></i></button>
+            </div>
 
 
           </div>
 
-          <div class="row">
-            <div class="col-md-3 ml-md-auto">
-
-
-              <div class="btn-group">
-                <button pButton type="button" label="Guardar" class="p-button-success" ><i class="pi pi-save" ></i>
-                </button>
-                <button pButton type="button" label="Limpiar" class="p-button-warning"><i class="pi pi-trash" ></i></button>
-              </div>
-
-
             </div>
+          
+        
+        </form>
 
-              </div>
-
-
-
-
+              
