@@ -1,0 +1,86 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a [routerLink]="['/']">Intranet Plaza Lama</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Inicio de Sesión</p>
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+        style="margin-bottom: 10px"
+      >
+        <div class="input-group mb-3">
+          <input
+            formControlName="user"
+            type="text"
+            class="form-control"
+            placeholder="Código / Usuario"
+          />
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            placeholder="Contraseña"
+          />
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7">
+            <!--<div class="icheck-primary">
+              <input type="checkbox" id="remember" />
+              <label for="remember"> Remember Me </label>
+            </div>-->
+          </div>
+          <!-- /.col -->
+          <div class="col-5">
+            <app-button
+              [type]="'submit'"
+              [block]="true"
+              [text]="'Entrar'"
+              [loading]="isAuthLoading"
+            ></app-button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <!--<div class="social-auth-links text-center mb-3">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>
+      </div>-->
+      <!-- /.social-auth-links -->
+
+      <p class="mb-1">
+        <a [routerLink]="['/forgot-password']"
+          >¿No puedes acceder a tu cuenta?</a
+        >
+      </p>
+      <p class="mb-0">
+        <a [routerLink]="['/register']" class="text-center">Registrate</a>
+      </p>
+      <p class="text-center font-weight-bold mb-0">
+        Intranet v{{ appVersion }}
+      </p>
+      <p class="text-center font-weight-bold">DEV</p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
