@@ -35,6 +35,9 @@ import { PanelClientClubComponent } from './views/panel-client-club/panel-client
 import {ButtonModule} from 'primeng-lts/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ToastModule} from 'primeng-lts/toast';
+import {InputMaskModule} from 'primeng/inputmask';
+import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
+
 
 
 
@@ -61,6 +64,7 @@ registerLocaleData(localeEn, 'en-EN');
     UserDropdownMenuComponent,
     ClientclubComponent,
     PanelClientClubComponent,
+    ClubdatatableComponent,
 
   ],
   imports: [
