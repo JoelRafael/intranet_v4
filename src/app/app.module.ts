@@ -34,6 +34,7 @@ import {TabViewModule} from 'primeng-lts/tabview';
 import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
 import {ButtonModule} from 'primeng-lts/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import {ToastModule} from 'primeng-lts/toast';
 
 
 
@@ -79,7 +80,8 @@ registerLocaleData(localeEn, 'en-EN');
     InputTextModule,
     TabViewModule,
     ButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    ToastModule
   ],
   providers: [...services],
   bootstrap: [AppComponent],
