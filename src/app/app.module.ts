@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
@@ -20,30 +19,25 @@ import { MessagesDropdownMenuComponent } from './pages/main/header/messages-drop
 import { NotificationsDropdownMenuComponent } from './pages/main/header/notifications-dropdown-menu/notifications-dropdown-menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppButtonComponent } from './components/app-button/app-button.component';
-
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import { UserDropdownMenuComponent } from './pages/main/header/user-dropdown-menu/user-dropdown-menu.component';
+import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
+import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
+import { ClientclubComponent } from './views/clientclub/clientclub.component';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { ButtonModule } from 'primeng-lts/button';
+import { ToastModule } from 'primeng-lts/toast';
+import { InputMaskModule } from 'primeng-lts/inputmask';
+import { MatSelectModule } from '@angular/material/select';
+import { InputTextModule } from 'primeng-lts/inputtext';
+import { TabViewModule } from 'primeng-lts/tabview';
 
 import { ApiService } from './utils/services/index';
-import { ClientclubComponent } from './views/clientclub/clientclub.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {InputTextModule} from 'primeng-lts/inputtext';
-import {TabViewModule} from 'primeng-lts/tabview';
-import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
-import {ButtonModule} from 'primeng-lts/button';
-import {MatTabsModule} from '@angular/material/tabs';
-import {ToastModule} from 'primeng-lts/toast';
-import {InputMaskModule} from 'primeng-lts/inputmask';
-
-import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
-
-
-
-
-
-let services = [ApiService];
+const services = [ApiService];
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -66,7 +60,6 @@ registerLocaleData(localeEn, 'en-EN');
     ClientclubComponent,
     PanelClientClubComponent,
     ClubdatatableComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -87,7 +80,7 @@ registerLocaleData(localeEn, 'en-EN');
     ButtonModule,
     MatTabsModule,
     ToastModule,
-    InputMaskModule
+    InputMaskModule,
   ],
   providers: [...services],
   bootstrap: [AppComponent],
