@@ -38,6 +38,7 @@
     "bootstrap": "4.5.3",
     "core-js": "3.8.0",
     "express": "4.17.1",
+    "ngx-mask": "^11.1.4",
     "ngx-toastr": "13.2.0",
     "primeicons": "^4.1.0",
     "primeng-lts": "^10.0.8",

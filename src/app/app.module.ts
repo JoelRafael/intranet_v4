@@ -36,9 +36,11 @@ import {ButtonModule} from 'primeng-lts/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ToastModule} from 'primeng-lts/toast';
 import {InputMaskModule} from 'primeng-lts/inputmask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
 
 import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
-
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
 
@@ -87,7 +89,8 @@ registerLocaleData(localeEn, 'en-EN');
     ButtonModule,
     MatTabsModule,
     ToastModule,
-    InputMaskModule
+    //InputMaskModule,
+    NgxMaskModule.forRoot({dropSpecialCharacters:false}),
   ],
   providers: [...services],
   bootstrap: [AppComponent],

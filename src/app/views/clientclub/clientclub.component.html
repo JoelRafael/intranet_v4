@@ -7,38 +7,41 @@
         >
         <div class="row">
 
+
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Club</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.club"  formControlName="club"
+              <input type="text" matInput [(ngModel)]="validator.club" mask="99999999999999"
+                 formControlName="club"
                      placeholder="24000011111111" >
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Cedula/Pasaporte</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.cedula" formControlName="cedula"
+              <input type="text" matInput [(ngModel)]="validator.cedula"   mask="99999999999"   formControlName="cedula"
                      placeholder="Cedula sin guiones">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
-              <mat-label>Codigo</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.codigo" formControlName="codigo"
-                     placeholder="V0000445A">
+              <mat-label>Code</mat-label>
+              <input type="text" matInput [(ngModel)]="validator.code" formControlName="code"
+               mask="A{9}" placeholder="V0000445A">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Nombre</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.nombre" formControlName="nombre"
+              <input type="text" matInput [(ngModel)]="validator.nombre"
+                  formControlName="nombre"
                      placeholder="Juan Alberto">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Apellido</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.apellido" formControlName="apellido"
+              <input type="text" matInput [(ngModel)]="validator.apellido" formControlName="apellido"
                      placeholder="Perez Gomez">
                 </mat-form-field>
           </div>
@@ -47,21 +50,21 @@
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Telefono</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.telefono" formControlName="telefono"
-                     placeholder="809-000-0000">
+              <input type="text" matInput [(ngModel)]="validator.telefono" mask="(000)-000-0000" formControlName="telefono"
+                     placeholder="(809)-000-0000">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Celular</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.celular" formControlName="celular"
-                     placeholder="809-000-0000">
+              <input type="text" matInput [(ngModel)]="validator.celular" mask="(000)-000-0000" formControlName="celular"
+                     placeholder="(809)-000-0000">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Direccion</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.direccion" formControlName="direccion"
+              <input type="text" matInput [(ngModel)]="validator.direccion" formControlName="direccion"
                      placeholder="Ave 27 de febrero">
                 </mat-form-field>
           </div>
@@ -71,7 +74,7 @@
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Ciudad</mat-label>
-              <input type="email" matInput [(ngModel)]="validator.ciudad" formControlName="ciudad"
+              <input type="text" matInput [(ngModel)]="validator.ciudad" formControlName="ciudad"
                      placeholder="Santo Domingo">
                 </mat-form-field>
           </div>

@@ -12,7 +12,7 @@ import {MessageService} from 'primeng-lts/api';
 export class ClientclubComponent implements OnInit {
 
 validator:any={
-  club:'', cedula:'', codigo:'', nombre:'', apellido:'', telefono:'',
+  club:'', cedula:'', code:'', nombre:'', apellido:'', telefono:'',
   celular:'', direccion:'', ciudad:'', email:'', status:'', tienda:''
 
 };
@@ -21,17 +21,18 @@ formregistreclub:FormGroup;
   constructor(private formbuilder:FormBuilder, private messageService: MessageService) {
     this.formregistreclub=this.formbuilder.group({
       club:["",  [Validators.required]],
-      cedula:["", [Validators.required, Validators.minLength(8) ]],
-      codigo:["",  [Validators.required]],
+      cedula:["", [Validators.required, Validators.minLength(8), Validators.maxLength(11) ]],
+      code:["",  [Validators.required]],
       nombre:["", [Validators.required]],
       apellido:["", [Validators.required]],
-      telefono:["", [Validators.required, Validators.minLength(11), Validators.maxLength(11) ]],
-      celular:["", [Validators.required, Validators.minLength(11), Validators.maxLength(11) ]],
+      telefono:["", [Validators.required]],
+      celular:["", [Validators.required ]],
       direccion:["", [Validators.required]],
       ciudad:["", [Validators.required]],
       email:["",  [Validators.required, Validators.email, Validators.pattern("[^@]*@[^@]*")]],
       status:["", [Validators.required]],
       tienda:["", [Validators.required]]
+
 
     })
   }
