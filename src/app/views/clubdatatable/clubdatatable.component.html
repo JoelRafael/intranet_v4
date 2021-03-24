@@ -2,112 +2,113 @@
 
 <div class="card">
 
+<p-toast></p-toast>
 
-    <p-table #dt  [globalFilterFields]="['name','country.name','representative.name','status']"
-        [rowHover]="true" dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-        <ng-template pTemplate="caption">
-            <div class="p-d-flex p-ai-center p-jc-between">
+    <div class="card">
+    
+    
+        <p-table #dt  [globalFilterFields]="['name','country.name','representative.name','status']"
+            [rowHover]="true" dataKey="id"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex p-ai-center p-jc-between">
+    
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                    </span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+    
+                    <th pSortableColumn="pl">PL </th>
+                    <th pSortableColumn="cedula">Cedula</th>
+                    <th pSortableColumn="club">Club </th>
+                    <th pSortableColumn="nombre">Nombre </th>
+                    <th pSortableColumn="apellido">Apellido </th>
+                    <th pSortableColumn="direccion">Direccion </th>
+                    <th pSortableColumn="code">Code </th>
+                    <th pSortableColumn="inventoryStatus">Status</th>
+                    
+    
+                </tr>
+    
+            </ng-template>
+            
+            <ng-template pTemplate="body" let-clientclub="clientclub">
+                <tr> 
 
-                <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
-                </span>
+                    <td>{{clientclub.pl}}</td>
+                    <td>{{clientclub.cedula}}</td>
+                    <td>{{clientclub.club}}</td>
+                    <td>{{clientclub.nombre}}</td>
+                    <td>{{clientclub.apellido}}</td>
+                    <td>{{clientclub.direccion}}</td>
+                    <td>{{clientclub.code}}</td>
+                    <td>{{clientclub.status}}</td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+        
+    </div>
+    
+    <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+        <ng-template pTemplate="content">
+            v vvvvvvvvvvvvv            nnrrrrrrrrrr
+            <div class="p-field">
+                <label for="name">Name</label>
+                <input type="text" pInputText id="name" required autofocus />
+                <small class="p-invalid" *ngIf="submitted && !clientclub.name">Name is required.</small>
             </div>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-
-                <th pSortableColumn="pl">PL </th>
-                <th pSortableColumn="cedula">Cedula</th>
-                <th pSortableColumn="club">Club </th>
-                <th pSortableColumn="nombre">Nombre </th>
-                <th pSortableColumn="apellido">Apellido </th>
-                <th pSortableColumn="direccion">Direccion </th>
-                <th pSortableColumn="code">Code </th>
-                <th pSortableColumn="inventoryStatus">Status</th>
-
-            </tr>
-
-
-        </ng-template>
-        <ng-template  pTemplate="body" >
-            <tr>
-
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>PL08</td>
-                <td>
-                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="summary">
-            <div class="p-d-flex p-ai-center p-jc-between">
-
-                In total there are products.
+            <div class="p-field">
+                <label for="description">Description</label>
+                <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
             </div>
-        </ng-template>
-    </p-table>
-</div>
-
-<p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
-    <ng-template pTemplate="content">
-        v vvvvvvvvvvvvv            nnrrrrrrrrrr
-        <div class="p-field">
-            <label for="name">Name</label>
-            <input type="text" pInputText id="name" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !product.name">Name is required.</small>
-        </div>
-        <div class="p-field">
-            <label for="description">Description</label>
-            <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
-        </div>
-
-        <div class="p-field">
-            <label class="p-mb-3">Category</label>
+    
+            <div class="p-field">
+                <label class="p-mb-3">Category</label>
+                <div class="p-formgrid p-grid">
+                    <div class="p-field-radiobutton p-col-6">
+                        <p-radioButton id="category1" name="category" value="Accessories" ></p-radioButton>
+                        <label for="category1">Accessories</label>
+                    </div>
+                    <div class="p-field-radiobutton p-col-6">
+                        <p-radioButton id="category2" name="category" value="Clothing" ></p-radioButton>
+                        <label for="category2">Clothing</label>
+                    </div>
+                    <div class="p-field-radiobutton p-col-6">
+                        <p-radioButton id="category3" name="category" value="Electronics" ></p-radioButton>
+                        <label for="category3">Electronics</label>
+                    </div>
+                    <div class="p-field-radiobutton p-col-6">
+                        <p-radioButton id="category4" name="category" value="Fitness" ></p-radioButton>
+                        <label for="category4">Fitness</label>
+                    </div>
+                </div>
+            </div>
+    
             <div class="p-formgrid p-grid">
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category1" name="category" value="Accessories" ></p-radioButton>
-                    <label for="category1">Accessories</label>
+                <div class="p-field p-col">
+                    <label for="price">Price</label>
+                    <p-inputNumber id="price"  mode="currency" currency="USD" locale="en-US"></p-inputNumber>
                 </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category2" name="category" value="Clothing" ></p-radioButton>
-                    <label for="category2">Clothing</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category3" name="category" value="Electronics" ></p-radioButton>
-                    <label for="category3">Electronics</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category4" name="category" value="Fitness" ></p-radioButton>
-                    <label for="category4">Fitness</label>
+                <div class="p-field p-col">
+                    <label for="quantity">Quantity</label>
+                    <p-inputNumber id="quantity" ></p-inputNumber>
                 </div>
             </div>
-        </div>
-
-        <div class="p-formgrid p-grid">
-            <div class="p-field p-col">
-                <label for="price">Price</label>
-                <p-inputNumber id="price"  mode="currency" currency="USD" locale="en-US"></p-inputNumber>
-            </div>
-            <div class="p-field p-col">
-                <label for="quantity">Quantity</label>
-                <p-inputNumber id="quantity" ></p-inputNumber>
-            </div>
-        </div>
-    </ng-template>
-
-    <ng-template pTemplate="footer">
-        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
-    </ng-template>
-</p-dialog>
-
-<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+        </ng-template>
+    
+        <ng-template pTemplate="footer">
+            <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+            <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
+        </ng-template>
+    </p-dialog>
+    
+    <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
