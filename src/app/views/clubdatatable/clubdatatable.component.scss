@@ -17,9 +17,6 @@
   .table-header {
       display: flex;
       justify-content: space-between;
-      
-      
-
   }
 
   .p-calendar .p-datepicker {
@@ -35,7 +32,6 @@
           padding: 1rem;
           text-align: left;
           font-size: 1.5rem;
-
       }
 
       .p-paginator {
@@ -44,7 +40,6 @@
 
       .p-datatable-thead > tr > th {
           text-align: left;
-         
       }
 
       .p-datatable-tbody > tr > td {
@@ -100,9 +95,4 @@
       }
   }
 
-}
-.tableid{
-
-  background: rgb(25,33,158);
-  background: linear-gradient(90deg, rgba(25,33,158,0.8547618876652223) 42%, rgba(0,133,255,1) 100%);
 }
