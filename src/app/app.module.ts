@@ -35,11 +35,35 @@ import { PanelClientClubComponent } from './views/panel-client-club/panel-client
 import {ButtonModule} from 'primeng-lts/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ToastModule} from 'primeng-lts/toast';
-import {InputMaskModule} from 'primeng-lts/inputmask';
+
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-
-
+import {TableModule} from 'primeng-lts/table';
 import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
+
+
+
+
+
+import {CalendarModule} from 'primeng-lts/calendar';
+import {SliderModule} from 'primeng-lts/slider';
+import {MultiSelectModule} from 'primeng-lts/multiselect';
+import {ContextMenuModule} from 'primeng-lts/contextmenu';
+import {DialogModule} from 'primeng-lts/dialog';
+
+import {DropdownModule} from 'primeng-lts/dropdown';
+import {ProgressBarModule} from 'primeng-lts/progressbar';
+
+import {FileUploadModule} from 'primeng-lts/fileupload';
+import {ToolbarModule} from 'primeng-lts/toolbar';
+import {RatingModule} from 'primeng-lts/rating';
+import {RadioButtonModule} from 'primeng-lts/radiobutton';
+import {InputNumberModule} from 'primeng-lts/inputnumber';
+import { ConfirmDialogModule } from 'primeng-lts/confirmdialog';
+
+import { InputTextareaModule } from 'primeng-lts/inputtextarea';
+
+
+
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
@@ -89,10 +113,27 @@ registerLocaleData(localeEn, 'en-EN');
     ButtonModule,
     MatTabsModule,
     ToastModule,
-    //InputMaskModule,
-    NgxMaskModule.forRoot({dropSpecialCharacters:false}),
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    DialogModule,
+    DropdownModule,
+    ProgressBarModule,
+    FileUploadModule,
+    ToolbarModule,
+    RatingModule,
+    RadioButtonModule,
+    InputNumberModule,
+    ConfirmDialogModule,
+
+    InputTextareaModule,
+     NgxMaskModule.forRoot({dropSpecialCharacters:false}),
+
   ],
-  providers: [...services],
+
+  providers: [...services ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

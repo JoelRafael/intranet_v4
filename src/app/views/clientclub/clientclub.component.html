@@ -2,7 +2,7 @@
 
           <form
           [formGroup]="formregistreclub" novalidate
-          (ngSubmit)="onSubmit(formregistreclub)"
+          (ngSubmit)="agregandocliente(formregistreclub)"
           style="margin-bottom: 10px" class="formcart"
         >
         <div class="row">
@@ -50,15 +50,15 @@
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Telefono</mat-label>
-              <input type="text" matInput [(ngModel)]="validator.telefono" mask="(000)-000-0000" formControlName="telefono"
-                     placeholder="(809)-000-0000">
+              <input type="text" matInput [(ngModel)]="validator.telefono" mask="000-000-0000" formControlName="telefono"
+                     placeholder="809-000-0000">
                 </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="example-full-width">
               <mat-label>Celular</mat-label>
-              <input type="text" matInput [(ngModel)]="validator.celular" mask="(000)-000-0000" formControlName="celular"
-                     placeholder="(809)-000-0000">
+              <input type="text" matInput [(ngModel)]="validator.celular" mask="000-000-0000" formControlName="celular"
+                     placeholder="809-000-0000">
                 </mat-form-field>
           </div>
           <div class="col">

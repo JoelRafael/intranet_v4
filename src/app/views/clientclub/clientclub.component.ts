@@ -2,6 +2,7 @@ import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validator, Validators} from '@angular/forms';
 import {MessageService} from 'primeng-lts/api';
+import {CluballService} from './../../utils/services/clubservice/cluball.service';
 
 @Component({
   selector: 'app-clientclub',
@@ -16,9 +17,10 @@ validator:any={
   celular:'', direccion:'', ciudad:'', email:'', status:'', tienda:''
 
 };
+request:any;
 formregistreclub:FormGroup;
 
-  constructor(private formbuilder:FormBuilder, private messageService: MessageService) {
+  constructor(private formbuilder:FormBuilder, private messageService: MessageService, private clubservice:CluballService) {
     this.formregistreclub=this.formbuilder.group({
       club:["",  [Validators.required]],
       cedula:["", [Validators.required, Validators.minLength(8), Validators.maxLength(11) ]],
@@ -35,11 +37,12 @@ formregistreclub:FormGroup;
 
 
     })
+
   }
 
   ngOnInit(): void {
   }
-onSubmit(paramnt){
+/*onSubmit(paramnt){
 
 
 
@@ -51,10 +54,39 @@ onSubmit(paramnt){
     this.messageService.add({severity:'error', summary:'Error :(', detail:'Todos los campos son requeridos'});
     this.formregistreclub.markAllAsTouched();
   }
-}
+}*/
 clear() {
   this.messageService.clear();
 }
 
+agregandocliente(paramnt){
+  if(this.formregistreclub.valid){
 
+  this.clubservice.agregandoclienteclub(this.validator).subscribe(resultado=>{
+
+
+   },error=>{
+
+
+
+  })
+
+
+} else{
+  this.messageService.add({severity:'error', summary:'Error :(', detail:'Todos los campos son requeridos'});
+  this.formregistreclub.markAllAsTouched();
+}
+}
+
+requestclub(){
+  this.clubservice.obtenerquest().subscribe( resultado=>{
+    this.request=resultado.message;
+    this.messageService.add({severity:'success', summary:'Exito :)', detail: this.request});
+
+        },
+        error=>{
+    console.log(JSON.stringify(error));
+        });
+
+}
 }
