@@ -5,9 +5,14 @@ import { Component, OnInit, Input, ViewChild, AfterViewInit, ViewContainerRef, T
 //import { ConfirmationService } from 'primeng-lts/api';
 //import { MessageService } from 'primeng-lts/api';
 interface DataItem {
-  name: string;
-  age: number;
-  address: string;
+  pl: string;
+  cedula: string;
+  club: string;
+  nombre: string;
+  apellido: string;
+  direccion: string;
+  code: string;
+  estatus: string;
 }
 
 @Component({
@@ -19,7 +24,8 @@ interface DataItem {
    
 export class ClubdatatableComponent implements OnInit {
 
-  
+  isVisible = false;
+  isOkLoading = false;
   constructor() { 
     
   }
@@ -32,25 +38,16 @@ export class ClubdatatableComponent implements OnInit {
   visible = false;
   listOfData: DataItem[] = [
     {
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-    {
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park'
-    },
-    {
-      name: 'Jim Red',
-      age: 32,
-      address: 'London No. 2 Lake Park'
+      pl: 'PL08',
+      cedula: "40235040074",
+      club: '0000000000000',
+      nombre:"Joel",
+      apellido:"Paredes",
+      direccion:"Calle Altagracia",
+      code:"V08079473",
+      estatus:"Activo"
     }
+    
   ];
   listOfDisplayData = [...this.listOfData];
 
@@ -61,7 +58,24 @@ export class ClubdatatableComponent implements OnInit {
 
   search(): void {
     this.visible = false;
-    this.listOfDisplayData = this.listOfData.filter((item: DataItem) => item.name.indexOf(this.searchValue) !== -1);
+    this.listOfDisplayData = this.listOfData.filter((item: DataItem) => item.cedula.indexOf(this.searchValue) !== -1);
+
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.isOkLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isOkLoading = false;
+    }, 3000);
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
   }
 }
 
