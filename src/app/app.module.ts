@@ -38,9 +38,7 @@ import {ToastModule} from 'primeng-lts/toast';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { NzTableModule } from 'ng-zorro-antd/table';
+
 ;
 
 
@@ -106,11 +104,7 @@ registerLocaleData(localeEn, 'en-EN');
 
     FormsModule,
   
-    NzModalModule,
-   
-    NzPaginationModule,
-    
-    NzTableModule,
+  
     NzDropDownModule,
    
 

@@ -1,5 +1,8 @@
 .main-sidebar {
   height: 100vh;
   overflow: scroll;
-
+  font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
