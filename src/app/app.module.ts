@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
@@ -23,40 +23,33 @@ import { AppButtonComponent } from './components/app-button/app-button.component
 
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
 import { UserDropdownMenuComponent } from './pages/main/header/user-dropdown-menu/user-dropdown-menu.component';
+import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
+import { ClientclubComponent } from './views/clientclub/clientclub.component';
+import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
+
 
 import { ApiService } from './utils/services/index';
-import { ClientclubComponent } from './views/clientclub/clientclub.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {InputTextModule} from 'primeng-lts/inputtext';
-import {TabViewModule} from 'primeng-lts/tabview';
-import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
-import {ButtonModule} from 'primeng-lts/button';
-import {MatTabsModule} from '@angular/material/tabs';
-import {ToastModule} from 'primeng-lts/toast';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
-;
+/* PrimeNG */
+import { InputTextModule } from 'primeng-lts/inputtext';
+import { TabViewModule } from 'primeng-lts/tabview';
+import { ButtonModule } from 'primeng-lts/button';
+import { ToastModule } from 'primeng-lts/toast';
+
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
-
-
-
-
-
-
-
-
+const primeng = [InputTextModule, TabViewModule, ButtonModule, ToastModule];
+const material = [MatTabsModule, MatInputModule, MatSelectModule];
+const services = [ApiService];
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
-
-
-
-
-let services = [ApiService];
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -78,8 +71,8 @@ registerLocaleData(localeEn, 'en-EN');
     UserDropdownMenuComponent,
     ClientclubComponent,
     PanelClientClubComponent,
-    ClubdatatableComponent,
-
+    ClubdatatableComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -93,26 +86,12 @@ registerLocaleData(localeEn, 'en-EN');
     }),
     NgbModule,
     HttpClientModule,
-    MatInputModule,
-    MatSelectModule,
-    InputTextModule,
-    TabViewModule,
-    ButtonModule,
-    MatTabsModule,
-    ToastModule,
-
-
+    ...primeng,
+    ...material,
     FormsModule,
-  
-  
-    NzDropDownModule,
-   
-
-     NgxMaskModule.forRoot({dropSpecialCharacters:false}),
-
+    NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
   ],
-
-  providers: [...services ],
+  providers: [...services],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
