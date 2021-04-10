@@ -8,8 +8,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
-import { ClientclubComponent } from './views/clientclub/clientclub.component';
-import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
+import { ClientclubComponent } from './views/club/clientclub/clientclub.component';
+import { PanelClientClubComponent } from './views/club/panel-client-club/panel-client-club.component';
 
 const routes: Routes = [
   {

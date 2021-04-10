@@ -1,8 +1,8 @@
 import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validator, Validators} from '@angular/forms';
+import {FormGroup,FormControl, FormBuilder, Validator, Validators} from '@angular/forms';
 import {MessageService} from 'primeng-lts/api';
-import {CluballService} from './../../utils/services/clubservice/cluball.service';
+import {CluballService} from './../../../utils/services/clubservice/cluball.service';
 
 @Component({
   selector: 'app-clientclub',
@@ -61,7 +61,7 @@ clear() {
 
 agregandocliente(paramnt){
   if(this.formregistreclub.valid){
-
+console.log("Hola mundo");
   this.clubservice.agregandoclienteclub(this.validator).subscribe(resultado=>{
 
 

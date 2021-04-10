@@ -20,36 +20,16 @@ import { MessagesDropdownMenuComponent } from './pages/main/header/messages-drop
 import { NotificationsDropdownMenuComponent } from './pages/main/header/notifications-dropdown-menu/notifications-dropdown-menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppButtonComponent } from './components/app-button/app-button.component';
-
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
-
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-
+import {ModulecomponentModule} from './modulecomponent/modulecomponent.module';
 import { UserDropdownMenuComponent } from './pages/main/header/user-dropdown-menu/user-dropdown-menu.component';
-import { PanelClientClubComponent } from './views/panel-client-club/panel-client-club.component';
-import { ClientclubComponent } from './views/clientclub/clientclub.component';
-import { ClubdatatableComponent } from './views/clubdatatable/clubdatatable.component';
-
-
 import { ApiService } from './utils/services/index';
 
-/* PrimeNG */
-import { InputTextModule } from 'primeng-lts/inputtext';
-import { TabViewModule } from 'primeng-lts/tabview';
-import { ButtonModule } from 'primeng-lts/button';
-import { ToastModule } from 'primeng-lts/toast';
 
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-
-
-const primeng = [InputTextModule, TabViewModule, ButtonModule, ToastModule];
-const material = [MatTabsModule, MatInputModule, MatSelectModule];
 const services = [ApiService];
 
-export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -69,10 +49,7 @@ registerLocaleData(localeEn, 'en-EN');
     NotificationsDropdownMenuComponent,
     AppButtonComponent,
     UserDropdownMenuComponent,
-    ClientclubComponent,
-    PanelClientClubComponent,
-    ClubdatatableComponent
-    
+   
   ],
   imports: [
     BrowserModule,
@@ -86,10 +63,10 @@ registerLocaleData(localeEn, 'en-EN');
     }),
     NgbModule,
     HttpClientModule,
-    ...primeng,
-    ...material,
-    FormsModule,
-    NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
+    ModulecomponentModule,
+    FormsModule 
+    
+    
   ],
   providers: [...services],
   bootstrap: [AppComponent],
